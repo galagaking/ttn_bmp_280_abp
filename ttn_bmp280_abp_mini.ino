@@ -54,7 +54,7 @@ bool BMP_Available=false;
 static const PROGMEM u1_t NWKSKEY[16] = { 0x21, 0xEE, //fill in your NWSKey };
 static const PROGMEM u1_t APPSKEY[16] = { 0xFE, 0xC6, //fill in your Appskey };
 // LoRaWAN end-device address (DevAddr)
-static const u4_t DEVADDR = 0x //fill in your devaddr ; // <-- Change this address for every node!
+static const u4_t DEVADDR = 0x; //fill in your devaddr  // <-- Change this address for every node!
 
 // These callbacks are only used in over-the-air activation, so they are
 // left empty here (we cannot leave them out completely unless
@@ -180,8 +180,8 @@ void do_send(osjob_t* j) {
 
     // getting sensor values
   
-    temperature = constrain(temperature,-24,40);  //temp in range -24 to 40 (64 steps)
-    pascal=constrain(pascal,970,1034);    //pressure in range 970 to 1034 (64 steps)*/
+    temperature = constrain(temperature,-24,39);  //temp in range -24 to 40 (64 steps)
+    pascal=constrain(pascal,970,1033);    //pressure in range 970 to 1034 (64 steps)*/
         t_value=int16_t((temperature*(100/6.25)+2400/6.25)); //0.0625 degree steps with offset
                                                       // no negative values
         Serial.print(F("decoded TEMP: "));
